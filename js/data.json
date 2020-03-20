@@ -1,0 +1,100 @@
+[
+  {
+    "id": 0,
+    "tag_text": "Хит продаж!",
+    "category": "bestseller",
+    "img": {
+        "small":"img/card/1_small.jpg",
+        "normal":"img/card/1.jpg"
+    },
+    "name": "Морской круиз в Анапу",
+    "route": "Сочи-Лазаревское",
+    "time": "10 ч. 0 мин.",
+    "price": "49 000",
+    "old_price": null
+  },
+  {
+    "id": 1,
+    "tag_text": "Акция",
+    "category": "sale",
+    "img": {
+      "small":"img/card/2_small.jpg",
+      "normal":"img/card/2.jpg"
+    },
+    "name": "Обзорная морская прогулка с экскурсией",
+    "route": "Сочи-Адлер-Сочи",
+    "time": " 1 ч. 0 мин.",
+    "price": "5000",
+    "old_price": "15000"
+  },
+  {
+    "id": 2,
+    "tag_text": "Скидка 10%",
+    "category": "sale",
+    "img": {
+      "small":"img/card/3_small.jpg",
+      "normal":"img/card/3.jpg"
+    },
+    "name": "Морская прогулка в Геленджик",
+    "route": "Сочи-Туапсе-Геленджик",
+    "time": "12 ч. 30 мин.",
+    "price": "10000",
+    "old_price": "7000"
+  },
+  {
+    "id": 3,
+    "tag_text": null,
+    "category": null,
+    "img": {
+      "small":"img/card/4_small.jpg",
+      "normal":"img/card/4.jpg"
+    },
+    "name": "Морской круиз в Новороссийск",
+    "route": "Сочи-Геленджик",
+    "time": " 13 ч. 0 мин.",
+    "price": "14 800",
+    "old_price": null
+  },
+  {
+    "id": 4,
+    "tag_text": null,
+    "category": null,
+    "img": {
+      "small":"img/card/4_small.jpg",
+      "normal":"img/card/4.jpg"
+    },
+    "name": "Морской круиз в Новороссийск",
+    "route": "Сочи-Геленджик",
+    "time": "13 ч. 0 мин.",
+    "price": "14 800",
+    "old_price": null
+  },
+  {
+    "id": 5,
+    "tag_text": null,
+    "category": null,
+    "img": {
+      "small":"img/card/4_small.jpg",
+      "normal":"img/card/4.jpg"
+    },
+    "name": "Морской круиз в Новороссийск",
+    "route": "Сочи-Геленджик",
+    "time": "13 ч. 0 мин.",
+    "price": "14 800",
+    "old_price": null
+  },
+  {
+    "id": 6,
+    "tag_text": null,
+    "category": null,
+    "img": {
+      "small":"img/card/4_small.jpg",
+      "normal":"img/card/4.jpg"
+    },
+    "name": "Морской круиз в Новороссийск",
+    "route": "Сочи-Геленджик",
+    "time": "13 ч. 0 мин.",
+    "price": "14 800",
+    "old_price": null
+  }
+]

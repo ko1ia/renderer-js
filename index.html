@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <!--    <script defer src="js/script.js"></script>-->
+    <script defer src="js/newScript.js"></script>
+</head>
+<body>
+
+<div class="modal hidden" id="modal">
+    <div class="modal__block">
+        <span class="modal__close">&times;</span>
+        <div class="modal__content">
+            <div class="modal__images">
+                <img class="modal__image" src="img/card/1.jpg" alt="Main Img">
+                <img class="modal__image" src="img/card/2.jpg" alt="Image">
+                <img class="modal__image" src="img/card/3.jpg" alt="Image">
+                <img class="modal__image" src="img/card/4.jpg" alt="Image">
+                <img class="modal__image" src="img/card/4.jpg" alt="Image">
+            </div>
+            <div class="modal__info">
+                <h3 class="cruise_title">
+                    <a class="cruise__title-link" href="#">Морская прогулка в Абрау Дюрсо</a>
+                </h3>
+                <p class="cruise__route"><b>Маршрут:</b> Сочи-Лазаревское</p>
+                <p class="cruise__time"><b>Продолжительность:</b> 10 ч. 0 мин.</p>
+                <p class="cruise_description"><b>Расписание:</b><br>Отправление из сочи: ежедневно в 10:00, 11:40,
+                    13:20, 15:00, 16:40
+                    <br>Отправление из Абрау-Дюрсо: ежедневно в 12:25, 14:05, 15:45, 17:25, 19:05
+                    <br>Продолжительность: 11 часов 0 мин. из которых 10 часов - морская прогулка (туда и обратно), от 1
+                    часа 30 мин. - свободное время в Ласточкином гнезде
+                    <strong class="cruise__price">49 000 руб.</strong>
+                    <br>
+                    <button class="button booking_button">Бронирование</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header class="header">
+    <div class="container">
+        <div class="top">
+            <nav class="navigation">
+                <button class="hamburger" aria-label="Меню">&#9776;</button>
+                <ul class="menu__list hidden">
+                    <li class="menu__item"><a class="menu__link" href="#">Популярные маршруты</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">Расписание рейсов</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">Забронированные рейсы</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">Вход для партнеров</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">О компании</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="actions">
+                <ul class="actions__list">
+                    <li class="actions__list-item">
+                        <button>
+                            <img class="item_icon" src="img/icons/user.png" aria-hidden="true" alt="Icon">
+                            Личный кабинет
+                            <img class="item_icon" src="img/icons/angle.png" aria-hidden="true" alt="Icon">
+                        </button>
+                    </li>
+                    <li class="actions__list-item">
+                        <button><img class="item_icon" src="img/icons/rub.png" aria-hidden="true" alt="Icon">
+                            Рубль
+                            <img class="item_icon" src="img/icons/angle.png" aria-hidden="true" alt="Icon">
+                        </button>
+                    </li>
+                    <li class="actions__list-item">
+                        <button>
+                            Ru
+                            <img class="item_icon" src="img/icons/angle.png" aria-hidden="true" alt="Icon">
+                        </button>
+                    </li>
+                </ul>
+                <div class="contact__header">
+                    <a class="contact__telephone" href="tel:88005006105">
+                        <span aria-label="Контактный номер"></span>
+                        8 800 500-61-05</a>
+                    <p class="contact__support">Круглосуточная поддержка</p>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main__info">
+                <img class="main__logo" src="img/logo.png" alt="Logo">
+                <h1 class="main__title">
+                    <span>Морские прогулки</span>
+                    <span>По черному морю</span>
+                </h1>
+                <button class="button select_button">Выбрать круиз</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <h1 id="h1"></h1>
+    <h2 class="section_title">Каталог круизов</h2>
+    <p class="sort">Сортировать круизы по <i>цене</i> <img class="item_icon" src="img/icons/angle.png"
+                                                           aria-hidden="true" alt="Icon"></p>
+    <template id="cruise_component">
+        <li class="card">
+            <article>
+                <div class="tag" data-attrs='{ "class": "category" }' data-if="category" data-text='tag_text'></div>
+                <div class="cruise__actions">
+                    <button class="button button__edit" data-if="alert('Fucked up')" data-listeners='{"click": "edit"}'>Редактировать</button>
+                    <button class="button button__delete" data-listeners='{"click": "remove"}'>Удалить</button>
+                </div>
+                <picture>
+                    <source data-attrs='{ "srcset":"img.small" }' media="(max-width: 639px)">
+                    <source data-attrs='{ "srcset":"img.normal" }' media="(min-width: 1024px)">
+                    <img class="card__img" data-attrs='{ "src":"img.normal", "alt":"name" }'>
+                </picture>
+                <div class="cruise__info">
+                    <h3>
+                        <button class="cruise__title-link" data-text="name">
+                            <img class="item_icon" src="img/icons/angle_right.png" aria-hidden="true" alt="Icon">
+                        </button>
+                    </h3>
+                    <p class="cruise__route"><b>Маршрут:</b> <span data-text="route"></span></p>
+                    <p class="cruise__time"><b>Продолжительность:</b> <span data-text="time"></span></p>
+                </div>
+                <div class="cruise__price">
+                    <strong class="price" data-text="price"><span>руб.</span></strong>
+                    <s class="price-old" data-if="old_price" data-text="old_price"><span>руб.</span></s>
+                </div>
+            </article>
+        </li>
+    </template>
+
+
+    <template id="app_component">
+        <div>
+            <ul id="cruises" data-for='{"component": "CruiseComponent", "collection": "cruises"}'>
+                <!-- placeholder -->
+
+            </ul>
+            <div data-put="FormComponent"></div>
+        </div>
+    </template>
+
+    <component>
+        <span data-selector="title">Title</span>
+        <span data-selector="text">Some text here</span>
+    </component>
+
+    <section>
+        <header>
+            <h1 data-content="title"></h1>
+            <button>Collapse</button>
+        </header>
+
+        <div class="panel" data-content="text"></div>
+    </section>
+
+
+    <template id="form_component" >
+        <form class="add_cruise" enctype="multipart/form-data" data-for='{ "" }'>
+            <label class="label-form" for="photo">Фото</label>
+            <input class="form-control" id="photo" type="text" placeholder="URL">
+            <label class="label-form" for="name">Название</label>
+            <input class="form-control" id="name" type="text" placeholder="Имя" required>
+            <label class="label-form" for="route">Маршрут</label>
+            <input class="form-control" id="route" type="text" placeholder="Маршрут" required>
+            <label class="label-form" for="time">Продолжительность</label>
+            <input class="form-control" id="time" type="text" placeholder="Продолжительность" required>
+            <label class="label-form" for="old-price">Старая цена</label>
+            <input class="form-control" id="old-price" type="text" placeholder="Старая цена" required>
+            <label class="label-form" for="price">Цена</label>
+            <input class="form-control" id="price" type="text" placeholder="Цена" required>
+            <button id="add_card" class="button" data-listeners='{ "click": "create"}'>Создать</button>
+        </form>
+    </template>
+    <div class="container" id="app">
+
+    </div>
+    <button class="button">Больше круизов <img class="item_icon" src="img/icons/angle_white.png" alt="Icon"
+                                               aria-hidden="true"></button>
+</main>
+
+
+<footer>
+    <div class="container">
+        <div class="footer">
+            <nav class="footer__nav">
+                <ul>
+                    <li class="footer__nav-item"><a class="footer__nav-link" href="#">Вход для партнеров</a></li>
+                    <li class="footer__nav-item"><a class="footer__nav-link" href="#">О компании</a></li>
+                    <li class="footer__nav-item"><a class="footer__nav-link" href="#">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="social">
+                <p class="social__title" aria-label="Наши соц сети">Будь на связи:</p>
+                <div class="social__buttons">
+                    <button class="social__button">
+                        <img class="social__img" src="img/icons/social/vk.png" alt="Вконтакте">
+                    </button>
+                    <button class="social__button">
+                        <img class="social__img" src="img/icons/social/ok.png" alt="Одноклассники">
+                    </button>
+                    <button class="social__button">
+                        <img class="social__img" src="img/icons/social/yt.png" alt="Ютуб">
+                    </button>
+                    <button class="social__button">
+                        <img class="social__img" src="img/icons/social/insta.png" alt="Инстаграм">
+                    </button>
+                </div>
+            </div>
+            <div class="footer__contacts">
+                <a href="tel:88005006105" class="contact__telephone"
+                   aria-label="Круглосуточная поддержка 8 800 500-61-05">8 800 500-61-05</a>
+                <p class="contact__support">Круглосуточная поддержка</p>
+                <p class="copyright">© 2016 OOO «Городские Круизы»</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    let hamburger_btn = document.querySelector('.hamburger');
+    let menu = document.querySelector('.menu__list');
+
+    hamburger_btn.onclick = () => {
+        menu.classList.toggle('hidden');
+    };
+
+</script>
+</body>
+</html>
